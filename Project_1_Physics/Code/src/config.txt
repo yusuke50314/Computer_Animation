@@ -1,0 +1,50 @@
+
+# config file
+
+parameters
+{ 
+	particles =  11 11;
+	distance = 8;
+
+	initpos = 0 10 0;	# minx miny minz maxx maxy maxz
+	restitution = 0.3;		# îΩî≠åWêî
+	worldbox = -10.0 -30.0 -10.0 10.0 10.0 10.0; # -10.0 -30.0 -10.0 10.0 10.0 10.0 #îÕàÕ minx miny minz maxx maxy maxz
+
+	part.radius = 1.0;
+	part.mass = 1.0 1.0;       # min/max # éøó 
+	part.vel = 10.0 10.0;      # min/max # ë¨ìx
+	part.restit = 1 1;         # min/max in [0.1,1]
+	part.dir = 0 0 0;          # moving direction
+	part.dir.rand = "-";       # random/-
+
+	bigpos = 0 -30 0;
+	big.radius = 30.0;
+
+	col.ks.vh = 100.0;		# spring k
+	col.ks.cross = 100.0;		# spring k
+	col.ks.particle = 10.0;		# spring k
+	col.ks.big = 100.0;		# spring k
+	col.ks.floor = 100.0;		# spring k
+
+	col.kd = 1.5;			# damping (.1 .6 .9)
+
+}
+
+end
+
+examples:
+- explosion
+- vertical line: with high and low damping
+- horizontal line
+- diagonal velocity
+
+initial:
+
+  col.ks = 40.0; # spring k
+  col.kd = 1.5;  # damping (.1 .6 .9)
+
+  part.mass = 1.0 1.0;       # min/max # éøó 
+  part.vel = 10.0 10.0;      # min/max # ë¨ìx
+  part.restit = 1 1;         # min/max in [0.1,1]
+  part.dir = 0 1 0;          # moving direction
+  part.dir.rand = "-";       # random/-
